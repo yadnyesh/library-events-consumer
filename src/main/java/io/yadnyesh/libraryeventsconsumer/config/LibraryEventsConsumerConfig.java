@@ -24,7 +24,7 @@ public class LibraryEventsConsumerConfig {
 			ConsumerFactory<Object, Object> kafkaConsumerFactory) {
 		ConcurrentKafkaListenerContainerFactory<Object, Object> factory = new ConcurrentKafkaListenerContainerFactory<>();
 		configurer.configure(factory, kafkaConsumerFactory);
-		//factory.setConcurrency(3);
+		factory.setConcurrency(3);
 		//factory.getContainerProperties().setAckMode(ContainerProperties.AckMode.MANUAL);
 //		factory.setErrorHandler(((thrownException, data) -> {
 //			log.info("Exception in consumerConfig is {} and the record is {}", thrownException.getMessage(), data);
